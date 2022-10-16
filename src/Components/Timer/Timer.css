@@ -1,0 +1,71 @@
+.countdown {
+  display: grid;
+  margin: 1em auto;
+  width: 7.5em;
+  height: 7.5em;
+}
+.countdown::after {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: center;
+  font-size: 2.5rem;
+  animation: num 5s steps(1) infinite;
+  content: "0:" counter(s, decimal-leading-zero);
+}
+
+@keyframes num {
+  0% {
+    counter-reset: s 5;
+  }
+  20% {
+	  counter-reset: s 4;
+  }
+  40% {
+	  counter-reset: s 3;
+  }
+  60% {
+	  counter-reset: s 2;
+  }
+  100% {
+    counter-reset: s 0;
+  }
+}
+svg {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[r] {
+  fill: none;
+  stroke: silver;
+}
+[r] + [r] {
+  transform: rotate(-90deg);
+  stroke-linecap: round;
+  stroke: #8A9B0F;
+  animation: arc 5s linear infinite;
+  animation-name: arc, col;
+}
+
+@keyframes arc {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes col {
+  0% {
+    stroke: #0055ff;
+  }
+  25% {
+    stroke: #0091ff;
+  }
+  50% {
+    stroke: #3dabff;
+  }
+  75% {
+    stroke: #00ccff;
+  }
+  100% {
+    stroke: #70e2ff;
+  }
+}
