@@ -28,7 +28,7 @@ export default function Breathe({ session }) {
 			setBreathe(messages[tick % 2]);
 			if (started) {
 				setTick((currentTick) => {
-					if (currentTick >= 6) {
+					if (currentTick >= 12) {
 						setTick(0);
 						setStarted(false);
 						clearInterval(interval);
@@ -56,7 +56,7 @@ export default function Breathe({ session }) {
 				<Grid xs={12} sm={10} md={8} lg={8} xl={8}>
 					<Card style={{
 						width: '100%',
-						backgroundColor: '#ffffff'
+						backgroundColor: 'rgba(255,255,255,1)'
 					}}>
 						<Card.Header style={{
 							display: 'inline-flex',

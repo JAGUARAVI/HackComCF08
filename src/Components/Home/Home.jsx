@@ -1,47 +1,47 @@
 import styled from 'styled-components';
 import Navbar from '../Navbar/Navbar';
-import { Button } from '@nextui-org/react';
+import { Button, Spacer } from '@nextui-org/react';
 
 export default function Home({ session }) {
 	return (
-			<Wrapper>
+		<Wrapper>
 			<Navbar session={session} />
-				<TopWrapper>
-					<Text1>
-						<Title>Pacify CF-08</Title>
-						<SubTitle>To Tackle Mental Illness</SubTitle>
-					</Text1>
-				</TopWrapper>
-				<LineImage src="/Lines1.svg" />
-				<TopWrapper>
+			<TopWrapper>
+				<Text1>
+					<Title>Pacify CF-08</Title>
+					<SubTitle>To Tackle Mental Health</SubTitle>
+				</Text1>
+			</TopWrapper>
+			<LineImage src="/Lines1.svg" />
+			<TopWrapper>
 
-					<TopWrapper2>
-						<WaveImage src="/Wave1.svg" />
-						<Text2>
-							<CardWrapper>
-								<SubTitle2>
-									A self-reflective journey, mind-soothing content, socialising activities, and gamified exercises empower you by setting daily goals to meet your mental wellness targets and allow you to lift up your emotional wellbeing and build positive habits into your daily schedule. Our globally validated, interactive, research and evidence based self-help tools aims to help you develop the faculties of self-management and emotional resilience. This program is embedded in the most powerful technique of Cognitive Behaviour Therapy, which has a similar therapeutic impact as personal interaction ones. Mental welfare is as much a choice as it is a chore. So make your choice and let us help you with the chores !
-								</SubTitle2>
-							</CardWrapper>
-						</Text2>
-					</TopWrapper2>
-				</TopWrapper>
-
-				<Tabs>
-					<div>
-						<img src='/HeadPhones.svg' style={{ width: "300px" }} />
-						<h3 style={{ color: 'white' }}>24 x 7 Helpline</h3>
-					</div>
-					<div>
-						<img src='/experts.svg' style={{ width: "300px" }} />
-						<h3 style={{ color: 'white' }}>Connect with Experts</h3>
-					</div>
-					<div>
-						<img src='/Tailored.svg' style={{ width: "300px" }} />
-						<h3 style={{ color: 'white' }}>Tailored Services</h3>
-					</div>
-				</Tabs>
-			</Wrapper>
+				<TopWrapper2>
+					<WaveImage src="/Wave1.svg" />
+					<Text2>
+						<CardWrapper>
+							<SubTitle2>
+								A self-reflective journey, mind-soothing content, socialising activities, and gamified exercises empower you by setting daily goals to meet your mental wellness targets and allow you to lift up your emotional wellbeing and build positive habits into your daily schedule. Our globally validated, interactive, research and evidence based self-help tools aims to help you develop the faculties of self-management and emotional resilience. This program is embedded in the most powerful technique of Cognitive Behaviour Therapy, which has a similar therapeutic impact as personal interaction ones. Mental welfare is as much a choice as it is a chore. So make your choice and let us help you with the chores!
+							</SubTitle2>
+						</CardWrapper>
+					</Text2>
+				</TopWrapper2>
+			</TopWrapper>
+			<Spacer y={4} />    /
+			{ /*<Tabs>
+				<div>
+					<img src='/HeadPhones.svg' style={{ width: "300px" }} />
+					<h3 style={{ color: 'white' }}>24 x 7 Helpline</h3>
+				</div>
+				<div>
+					<img src='/experts.svg' style={{ width: "300px" }} />
+					<h3 style={{ color: 'white' }}>Connect with Experts</h3>
+				</div>
+				<div>
+					<img src='/Tailored.svg' style={{ width: "300px" }} />
+					<h3 style={{ color: 'white' }}>Tailored Services</h3>
+				</div>
+			</Tabs>*/ }
+		</Wrapper>
 	);
 };
 
@@ -59,6 +59,7 @@ const Wrapper = styled.div`
 
 const LineImage = styled.img`
   object-fit: cover;
+  user-drag: none;
 `
 
 const WaveImage = styled.img`
@@ -67,6 +68,7 @@ const WaveImage = styled.img`
   align-self: center;
   object-fit: cover;
   z-index: 1;
+  user-drag: none;
 `
 
 const Text1 = styled.div`
@@ -81,6 +83,7 @@ const Text1 = styled.div`
 `
 
 const Text2 = styled.div`
+	z-index: 2;
     color:white;
     display: flex;
     flex-direction: column;
@@ -119,6 +122,7 @@ const SubTitle2 = styled.p`
     font-weight: 400;
     color: #FFFFFF;
     padding: 50px;
+	z-index: 2;
     @media (max-width:732px) {
         font-size: 20px;
         padding:20px

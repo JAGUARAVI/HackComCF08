@@ -1,14 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
-import { Grid, Card, Text, Button, Modal, Input, Radio, Spacer, Textarea, useInput } from '@nextui-org/react';
+import { Grid, Card, Text, Button, Modal, Radio, Spacer, Textarea } from '@nextui-org/react';
 import Navbar from '../Navbar/Navbar';
-import {
-	Navigate,
-	Link,
-} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import 'chart.js/auto';
-import {
-	Chart
-} from 'react-chartjs-2';
+import { Chart } from 'react-chartjs-2';
 import supabase from '../../supabase';
 
 export default function Dashboard({ session }) {
@@ -19,8 +14,8 @@ export default function Dashboard({ session }) {
 				id: 1,
 				label: 'Mental Health',
 				data: supabase.auth.user().user_metadata.records?.slice(0, 20) || [],
-				borderColor: 'rgb(53, 162, 235)',
-				backgroundColor: 'rgba(53, 162, 235, 0.5)',
+				borderColor: '#13a452',
+				backgroundColor: '#c8f9dd',
 			},
 		],
 	});
@@ -64,7 +59,6 @@ export default function Dashboard({ session }) {
 	}
 
 	const NormalAnalysis = () => {
-		//const result = Math.round((1 - (Object.keys(answersNormal).map((key) => parseFloat(answersNormal[key] || '0')).reduce((a, b) => a + b, 0)) / answersNormal.length) * 1000) / 10;
 		const vals = Object.keys(answersNormal).map((key) => parseFloat(answersNormal[key] || '0'));
 		const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
 		console.log(vals, avg)
@@ -77,7 +71,7 @@ export default function Dashboard({ session }) {
 		data.labels = new Array(Math.min(records.length, 20)).fill('')
 		data.datasets[0].data = records;
 		setData(data);
-		
+
 		setAnswersNormal({ one: '', two: '', three: '', four: '', five: '', });
 
 		supabase.auth.update({ data: { records } }).then(() => setNormal(false) || setAnswersAI({ one: '', two: '', three: '', four: '', five: '', }));
@@ -96,7 +90,7 @@ export default function Dashboard({ session }) {
 			}}>
 				<Grid xs={12} lg={9}>
 					<Card style={{
-						backgroundColor: 'rgba(255,255,255,1)'
+						backgroundColor: 'rgba(255,255,255,0.8)'
 					}}>
 						<Card.Header style={{
 							display: 'inline-flex',
@@ -134,7 +128,7 @@ export default function Dashboard({ session }) {
 												<Radio.Group color="secondary" onChange={(val) => {
 													answersNormal.one = val;
 													setAnswersNormal(answersNormal);
-												}} defaultValue="0">
+												}}>
 													<Radio value="0.9">Yes</Radio>
 													<Radio value="0">No</Radio>
 												</Radio.Group>
@@ -145,7 +139,7 @@ export default function Dashboard({ session }) {
 												<Radio.Group color="secondary" onChange={(val) => {
 													answersNormal.two = val;
 													setAnswersNormal(answersNormal);
-												}} defaultValue="0">
+												}}>
 													<Radio value="0.05">Rarely</Radio>
 													<Radio value="0.1">Occasionally</Radio>
 													<Radio value="0">Not Applicable</Radio>
@@ -159,7 +153,7 @@ export default function Dashboard({ session }) {
 												<Radio.Group color="secondary" onChange={(val) => {
 													answersNormal.three = val;
 													setAnswersNormal(answersNormal);
-												}} defaultValue="0">
+												}}>
 													<Radio value="0.85">Yes</Radio>
 													<Radio value="0">No</Radio>
 												</Radio.Group>
@@ -170,7 +164,7 @@ export default function Dashboard({ session }) {
 												<Radio.Group color="secondary" onChange={(val) => {
 													answersNormal.four = val;
 													setAnswersNormal(answersNormal);
-												}} defaultValue="0">
+												}}>
 													<Radio value="0.9">Yes</Radio>
 													<Radio value="0">No</Radio>
 												</Radio.Group>
@@ -181,7 +175,7 @@ export default function Dashboard({ session }) {
 												<Radio.Group color="secondary" onChange={(val) => {
 													answersNormal.five = val;
 													setAnswersNormal(answersNormal);
-												}} defaultValue="0">
+												}}>
 													<Radio value="1">Yes</Radio>
 													<Radio value="0">No</Radio>
 												</Radio.Group>

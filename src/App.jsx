@@ -48,13 +48,13 @@ export default function App() {
 						<Breathe session={session} />
 					} />
 					<Route path='/article/1' element={
-						<Article1 />
+						<Article1 session={session} />
 					} />
 					<Route path='/article/2' element={
-						<Article2 />
+						<Article2 session={session} />
 					} />
 					<Route path='/article/3' element={
-						<Article3 />
+						<Article3 session={session} />
 					} />
 					<Route path='/signin' element={
 						<SignIn session={session} />

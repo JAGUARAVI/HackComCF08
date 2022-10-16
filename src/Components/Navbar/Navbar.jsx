@@ -57,7 +57,7 @@ export default function Navbar({ session }) {
 							<NextLink as={Link} to='/article/1' href='/article/1'>
 								Discover
 							</NextLink>
-                            <Link href='/article/1'>Discover</Link>
+							<Link href='/article/1'>Discover</Link>
 						</Dropdown.Item>
 						<Dropdown.Item
 							showFullDescription

@@ -1,4 +1,4 @@
-import { Text, Link, Collapse, Grid, Card } from '@nextui-org/react';
+import { Text, Link, Collapse, Grid, Card, Image } from '@nextui-org/react';
 import Navbar from '../Navbar/Navbar';
 
 export default function Article({ session }) {
@@ -16,7 +16,7 @@ export default function Article({ session }) {
 				<Grid xs={12} sm={10} md={8} lg={8} xl={6}>
 					<Card style={{
 						padding: '1rem',
-						background: 'rgba(255, 255, 255, 0.7)',
+						background: 'rgba (255,255,255,0.8)',
 						border: '1px solid rgba(255, 255, 255, 0.5)',
 						backdropFilter: 'blur(20px)'
 					}}>
@@ -25,6 +25,9 @@ export default function Article({ session }) {
 							justifyContent: 'center'
 						}}>
 							<Text size={30}>Different Mental Ilnesses and Symptoms</Text>
+							<Image style={{
+								height: '12.5rem'
+							}} src="/happy.svg" />
 						</Card.Header>
 						<Card.Body>
 							<Collapse.Group>

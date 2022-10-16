@@ -20,7 +20,7 @@ export default function Article({ session }) {
 				<Grid xs={12} sm={10} md={8} lg={8} xl={6}>
 					<Card style={{
 						padding: '1rem',
-						background: 'rgba(255, 255, 255, 0.7)',
+						backgroundColor: 'rgba(255,255,255,0.8)',
 						border: '1px solid rgba(255, 255, 255, 0.5)',
 						backdropFilter: 'blur(20px)'
 					}}>
